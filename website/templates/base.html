@@ -14,6 +14,7 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../static/style.css" />
 
     <title>{% block title %}Home{% endblock %}</title>
   </head>
@@ -42,6 +43,7 @@
     </nav>
 
     <h1>{% block body %}Base{% endblock %}</h1>
+    <h5>{% block message%}{% endblock %}</h5>
     <div>{{results | safe}}</div>
     {% with messages = get_flashed_messages(with_categories=true) %} {% if
     messages %} {% for category, message in messages %} {% if category ==

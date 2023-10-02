@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block title %}AdorablePets{% endblock %} {% block
+body %}Get Creative!
+<h4>
+  Do you know any other adorable animals that are not yet listed on this site?
+  Get creative and search for cute videos of any animals! (or whatever you want
+  to find cute videos of really...)
+</h4>
+{% endblock %}{% block message %}
+<div class="search">
+  <form method="POST">
+    <input
+      type="text"
+      id="creative"
+      name="creative"
+      placeholder=" Search animals"
+      name="search"
+    />
+    <button>Generate!</button>
+  </form>
+</div>
+{% endblock %}

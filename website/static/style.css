@@ -1,0 +1,38 @@
+title {
+    margin: 10px;
+}
+button {
+    display: inline-block;
+    margin: 10px;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 14px 24px;
+    border: none;
+    transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+    background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
+    color: #fff;
+
+}
+
+
+input {
+    border: 3px solid #000;
+    border-radius: 5px;
+    height: 50px;
+    line-height: normal;
+    color: #282828;
+    display: block;
+    width: 70%;
+    box-sizing: border-box;
+    user-select: auto;
+    font-size: 16px;
+    padding: 0 6px;
+    padding-left: 12px;
+    margin: 10px;
+    }
+
+                

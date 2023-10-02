@@ -19,7 +19,7 @@ def home():
         result += '<a id='+ anml + ' href="/' + anml +'">click here to see more recent videos of ' + anml + '</a></div><br>'
 
 
-    return render_template("home.html", results=result, animal='Animals')
+    return render_template("homepage.html", results=result, animal='Animals')
 
 
 @views.route('/dogs')
@@ -46,7 +46,7 @@ def pandas():
 
 @views.route('/getcreative', methods=['GET'])
 def getcreative():
-    return render_template("creative.html",)
+    return render_template("getcreative.html",)
 @views.route('/getcreative', methods=['POST'])
 
 def postcreative():
