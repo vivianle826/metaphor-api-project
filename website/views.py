@@ -25,9 +25,6 @@ def home():
 @views.route('/dogs')
 def dogs():
     dogURL = generateSearch('dog', 5)
-    # print(dogURL)
-    
-    # dogURL = '<iframe width="560" height="315" src="https://www.youtube.com/embed/02tpVtZgARg" frameborder="0" allowfullscreen></iframe>"'
     return render_template("home.html", results=dogURL, animal='Dogs')
 
 
@@ -77,35 +74,20 @@ def generateSearch(animal, amount):
     )
 
     
-    # print(formatted_date)
-
     resultURL = [result.url for result in response.results]
-    # print(resultURL)
-    # print()
-    # resultURL = ['https://www.youtube.com/watch?v=Aruxxtr6OhU&t=197s']
     embeddedLink = ''
 
     for url in resultURL:
         print(url)
         website = get_website_from_url(url)
-        # print("website: ", website)
         if website == 'twitter.com':
             embeddedLink += twitter_embed(url)
         elif website == 'www.youtube.com':
-            # print(youtube_embed(url))
             embeddedLink += youtube_embed(url)
         else:
             toAppend = '<iframe src='+url+' width="800" height="600" frameborder="0" scrolling="auto"></iframe>'
             embeddedLink += toAppend
-        # embeddedLink += '<br>'
-    
-    # print(embeddedLink)
     return embeddedLink
-
-
-
-#             # Function to extract the domain from a URL
-
 
 def get_website_from_url(url):
     # Parse the URL
@@ -118,14 +100,9 @@ def get_website_from_url(url):
 def twitter_embed(url):
     oembed_url = f"https://publish.twitter.com/oembed?url={url}"
     try:
-        # Send a GET request to the oEmbed API
         response = requests.get(oembed_url)
-    # Check if the request was successful (status code 200)
         if response.status_code == 200:
-            # Parse the JSON response
             oembed_data = response.json()
-
-            # Access the embedded HTML from the response
             embedded_html = oembed_data.get("html", "")
             print(isinstance(embedded_html, str))
         else:
@@ -142,6 +119,3 @@ def youtube_embed(url):
     qsl = parse.parse_qs(url_parsed.query)
     videoID = qsl['v'][0]
     return f'<iframe width="560" height="315" src="https://www.youtube.com/embed/{videoID}" frameborder="0" allowfullscreen></iframe>'
-    # print(x)
-# youtube_embed('https://www.youtube.com/watch?v=02tpVtZgARg&ab_channel=GirlWithTheDogs2')
-# generateSearch("dog")
