@@ -1,1 +1,1 @@
-web: python main.py --host 0.0.0.0:$PORT
+worker: python main.py
