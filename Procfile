@@ -1,1 +1,1 @@
-web: python -u "/Users/vivianle/metaphor-api-project/main.py"
+web: python main.py
