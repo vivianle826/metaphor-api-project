@@ -1,5 +1,5 @@
-Flask
-Jinja2==2.11.3
+Flask==2.0.3
+Jinja2
 metaphor-python==0.1.16
 requests==2.27.1
-markupsafe==2.0.1
+markupsafe=
