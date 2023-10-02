@@ -11,12 +11,12 @@ views = Blueprint('views', __name__)
 @views.route('/', methods=['GET'])
 def home():
     result = ''
-    animals= ['dogs','cats','birds','pandas']
-    for anml in animals:
-        url = generateSearch(anml, 1)
-        result += '<div><h3>'+anml.capitalize()+':</h3>'
-        result += url
-        result += '<a id='+ anml + ' href="/' + anml +'">click here to see more recent videos of ' + anml + '</a></div><br>'
+    # animals= ['dogs','cats','birds','pandas']
+    # for anml in animals:
+    #     url = generateSearch(anml, 1)
+    #     result += '<div><h3>'+anml.capitalize()+':</h3>'
+    #     result += url
+    #     result += '<a id='+ anml + ' href="/' + anml +'">click here to see more recent videos of ' + anml + '</a></div><br>'
 
 
     return render_template("home.html", results=result, animal='Animals')
