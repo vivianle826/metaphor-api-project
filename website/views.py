@@ -56,7 +56,6 @@ def postcreative():
 
 
 def generateSearch(animal, amount):
-    # print(animal)
     metaphor = Metaphor("2ad6ae09-e1ed-4589-b4f7-bba79498c650")
     current_date_time = datetime.now()
     seven_days_ago = current_date_time - timedelta(days=7)
@@ -78,7 +77,6 @@ def generateSearch(animal, amount):
     embeddedLink = ''
 
     for url in resultURL:
-        print(url)
         website = get_website_from_url(url)
         if website == 'twitter.com':
             embeddedLink += twitter_embed(url)
@@ -104,7 +102,6 @@ def twitter_embed(url):
         if response.status_code == 200:
             oembed_data = response.json()
             embedded_html = oembed_data.get("html", "")
-            print(isinstance(embedded_html, str))
         else:
             print(
                 f"Failed to fetch Twitter oEmbed data. Status Code: {response.status_code}")
